@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WordPress 一括公開・インポートガイド</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script type="text/javascript" nonce="e1ca26852fa449999f1d2727f5b" src="//local.adguard.org?ts=1772151996435&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzQwY2NlMDRiODE0MDRhYTRiMGY3ZjUzNGQ2MzUyNjBmEgsSBxC_-4nR9gkYAZIBIwoKcHJvamVjdF9pZBIVQhM1ODU0NzY1Mzk5ODU4Nzc3ODI3%26filename%3D%26opi%3D89354086&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="e1ca26852fa449999f1d2727f5b" src="//local.adguard.org?ts=1772151996435&amp;name=AdGuard%20Extra&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Noto Serif JP for that premium Japanese look -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              dark: '#0A0A0A',
+              charcoal: '#1A1A1A',
+              accent: '#C5A028'
+            }
+          },
+          fontFamily: {
+            serif: ['"Noto Serif JP"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="typography">
+    body {
+      background-color: #0A0A0A;
+      color: #E5E5E5;
+      font-family: 'Noto Serif JP', serif;
+    }
+    .gold-gradient-text {
+      background: linear-gradient(to right, #D4AF37, #F9E498, #D4AF37);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-border {
+      border-image: linear-gradient(to right, #D4AF37, #A67C00) 1;
+    }
+  </style>
+<style data-purpose="layout-components">
+    .card-dark {
+      background: linear-gradient(145deg, #1A1A1A, #0F0F0F);
+      border: 1px solid #333;
+    }
+    .step-number {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body class="antialiased">
+<!-- BEGIN: MainHeader -->
+<header class="py-12 px-6 border-b border-brand-gold/20 text-center">
+<div class="max-w-4xl mx-auto">
+<span class="text-brand-gold tracking-[0.3em] text-sm uppercase mb-4 block">Premium Real Estate Solutions</span>
+<h1 class="text-4xl md:text-5xl font-bold mb-6 gold-gradient-text leading-tight">
+        WordPress一括公開・インポートガイド
+      </h1>
+<p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+        洗練された投資用ランディングページを、瞬時に世界へ発信するためのエグゼクティブ・マニュアル。
+      </p>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainContent -->
+<main class="max-w-6xl mx-auto py-16 px-6 lg:px-8">
+<!-- BEGIN: OneClickImportStrategy -->
+<section class="mb-24" data-purpose="section-import-strategy">
+<div class="flex items-center gap-4 mb-10">
+<span class="text-5xl font-bold text-brand-gold/30 step-number">01</span>
+<h2 class="text-3xl font-bold text-white">ワンクリック・インポート戦略</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-8 items-stretch">
+<div class="card-dark p-8 rounded-lg border-l-4 border-l-brand-gold">
+<h3 class="text-xl font-bold text-brand-gold mb-4">JSON / XML データの活用</h3>
+<p class="text-gray-400 leading-relaxed mb-6">
+            既に最適化されたページ構成をJSON形式でエクスポートし、Elementor等のページビルダーを使用して「一括」で取り込みます。手動でのブロック配置は一切不要です。
+          </p>
+<ul class="space-y-3 text-sm text-gray-300">
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
+              Elementor テンプレートライブラリへの接続
+            </li>
+<li class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
+              All-in-One WP Migration によるサイト全体の移行
+            </li>
+</ul>
+</div>
+<div class="flex items-center justify-center bg-brand-charcoal rounded-lg border border-white/5 relative overflow-hidden">
+<!-- Placeholder for visual representation of Import process -->
+<div class="text-center p-10">
+<div class="w-20 h-20 border-2 border-brand-gold border-dashed rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+<svg class="h-10 w-10 text-brand-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="text-xs tracking-widest text-brand-gold/60">FILE IMPORT SYSTEM</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: OneClickImportStrategy -->
+<!-- BEGIN: TemplatePreparation -->
+<section class="mb-24" data-purpose="section-template-prep">
+<div class="flex items-center gap-4 mb-10">
+<span class="text-5xl font-bold text-brand-gold/30 step-number">02</span>
+<h2 class="text-3xl font-bold text-white">テンプレート・プレパレーション</h2>
+</div>
+<div class="card-dark p-10 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-3xl rounded-full"></div>
+<div class="grid md:grid-cols-3 gap-10">
+<div>
+<h4 class="text-brand-gold font-bold mb-2">構成の統一</h4>
+<p class="text-sm text-gray-400">バリ不動産ブランドのトーン＆マナーに合わせ、黄金比に基づいた余白設定済みのテンプレートを使用します。</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-bold mb-2">アセットの最適化</h4>
+<p class="text-sm text-gray-400">高解像度画像はあらかじめWebP形式に圧縮され、読み込み速度と美しさを両立させた状態でパッケージ化されています。</p>
+</div>
+<div>
+<h4 class="text-brand-gold font-bold mb-2">レスポンシブ同期</h4>
+<p class="text-sm text-gray-400">PC、タブレット、スマートフォン全ての表示が最適化された状態でインポートされるため、個別の調整時間を削減します。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TemplatePreparation -->
+<!-- BEGIN: DomainSSL -->
+<section class="mb-24" data-purpose="section-domain-setup">
+<div class="flex items-center gap-4 mb-10">
+<span class="text-5xl font-bold text-brand-gold/30 step-number">03</span>
+<h2 class="text-3xl font-bold text-white">ドメイン ＆ SSL セットアップ</h2>
+</div>
+<div class="bg-brand-charcoal border border-brand-gold/10 p-8 rounded-lg">
+<div class="flex flex-wrap gap-6 justify-between items-center">
+<div class="space-y-4 max-w-md">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-5 h-5 bg-brand-gold/20 rounded flex items-center justify-center flex-shrink-0">
+<svg class="w-3 h-3 text-brand-gold" fill="currentColor" viewbox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+</div>
+<div>
+<p class="font-bold text-white">独自ドメインの紐付け</p>
+<p class="text-sm text-gray-400">投資家の信頼を勝ち取るための専用ドメイン設定。</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 w-5 h-5 bg-brand-gold/20 rounded flex items-center justify-center flex-shrink-0">
+<svg class="w-3 h-3 text-brand-gold" fill="currentColor" viewbox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+</div>
+<div>
+<p class="font-bold text-white">常時SSL化 (HTTPS)</p>
+<p class="text-sm text-gray-400">セキュアな通信環境により、コンバージョン率とSEO評価を向上させます。</p>
+</div>
+</div>
+</div>
+<div class="w-full md:w-auto">
+<div class="p-6 bg-black/40 border border-brand-gold/30 rounded-md text-center">
+<span class="text-xs text-brand-gold block mb-2 uppercase tracking-widest">Server Status</span>
+<div class="flex items-center justify-center gap-2">
+<span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+<span class="text-white font-mono">ENCRYPTED &amp; ACTIVE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: DomainSSL -->
+<!-- BEGIN: FinalChecklist -->
+<section class="mb-16" data-purpose="section-launch-checklist">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold gold-gradient-text mb-4">最終ローンチチェックリスト</h2>
+<div class="w-24 h-1 bg-brand-gold mx-auto"></div>
+</div>
+<div class="max-w-2xl mx-auto space-y-4">
+<label class="flex items-center p-5 card-dark rounded-lg cursor-pointer hover:border-brand-gold/50 transition-colors group">
+<input class="w-6 h-6 rounded border-brand-gold bg-transparent text-brand-gold focus:ring-offset-brand-dark focus:ring-brand-gold" type="checkbox"/>
+<span class="ml-4 text-gray-200 group-hover:text-white">全ての外部リンクの動作確認完了</span>
+</label>
+<label class="flex items-center p-5 card-dark rounded-lg cursor-pointer hover:border-brand-gold/50 transition-colors group">
+<input class="w-6 h-6 rounded border-brand-gold bg-transparent text-brand-gold focus:ring-offset-brand-dark focus:ring-brand-gold" type="checkbox"/>
+<span class="ml-4 text-gray-200 group-hover:text-white">お問い合わせフォームのテスト送信完了</span>
+</label>
+<label class="flex items-center p-5 card-dark rounded-lg cursor-pointer hover:border-brand-gold/50 transition-colors group">
+<input class="w-6 h-6 rounded border-brand-gold bg-transparent text-brand-gold focus:ring-offset-brand-dark focus:ring-brand-gold" type="checkbox"/>
+<span class="ml-4 text-gray-200 group-hover:text-white">トラッキングコード (GA4/Pixel) の設置</span>
+</label>
+<label class="flex items-center p-5 card-dark rounded-lg cursor-pointer hover:border-brand-gold/50 transition-colors group">
+<input class="w-6 h-6 rounded border-brand-gold bg-transparent text-brand-gold focus:ring-offset-brand-dark focus:ring-brand-gold" type="checkbox"/>
+<span class="ml-4 text-gray-200 group-hover:text-white">モバイル表示でのレイアウト崩れチェック</span>
+</label>
+</div>
+<div class="mt-16 text-center">
+<button class="px-12 py-5 bg-brand-gold text-black font-bold text-lg rounded-full hover:bg-brand-accent transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+          公開を確定する (Publish Now)
+        </button>
+<p class="mt-4 text-sm text-gray-500 italic">※一括インポートにより、既存のページは上書きされる場合があります。</p>
+</div>
+</section>
+<!-- END: FinalChecklist -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: Footer -->
+<footer class="py-10 border-t border-white/10 text-center">
+<p class="text-xs text-gray-500 tracking-widest uppercase">
+      © 2024 Luxury Bali Real Estate. All Rights Reserved.
+    </p>
+</footer>
+<!-- END: Footer -->
+</body></html>
