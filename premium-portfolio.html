@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Premium Property Portfolio - Luxe Estates</title>
+<!-- Tailwind CSS -->
+<script type="text/javascript" nonce="e1ca26852fa449999f1d2727f5b" src="//local.adguard.org?ts=1772180791204&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzhjNzY5ODQ1YTNjNDQ2NDZiOTY5NTczMGFmZmZmZDBmEgsSBxC_-4nR9gkYAZIBIwoKcHJvamVjdF9pZBIVQhM1ODU0NzY1Mzk5ODU4Nzc3ODI3%26filename%3D%26opi%3D89354086&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="e1ca26852fa449999f1d2727f5b" src="//local.adguard.org?ts=1772180791204&amp;name=AdGuard%20Extra&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eebd2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221d10",
+                        "card-dark": "#332d19",
+                        "gold-accent": "#c9bb92",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased min-h-screen flex flex-col">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-background-light/90 dark:bg-background-dark/90 border-b border-background-dark/10 dark:border-primary/20">
+<div class="px-6 md:px-10 lg:px-40 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3 text-slate-900 dark:text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined text-2xl">diamond</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-wider uppercase">Luxe Estates</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Portfolio</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Investment</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">About</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium" href="#">Contact</a>
+</nav>
+<div class="flex gap-3">
+<button class="hidden lg:flex items-center justify-center rounded-lg h-9 px-4 bg-transparent border border-primary/40 text-primary text-sm font-bold hover:bg-primary/10 transition-colors">
+<span>Client Login</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-9 px-4 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold transition-colors shadow-[0_0_15px_rgba(238,189,43,0.3)]">
+<span>Inquire</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-4 md:px-10 lg:px-40 py-12 flex flex-col items-center">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+<div class="flex items-center justify-center gap-2 text-primary/80 uppercase tracking-[0.2em] text-xs font-bold">
+<span class="w-8 h-[1px] bg-primary/50"></span>
+<span>Private Collection</span>
+<span class="w-8 h-[1px] bg-primary/50"></span>
+</div>
+<h1 class="text-slate-900 dark:text-white text-3xl md:text-5xl font-bold tracking-tight">Curated Portfolio</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg">
+                Exclusive access to high-yield investment opportunities in Bali's most coveted locations. Restricted to qualified investors.
+            </p>
+</div>
+<!-- Portfolio Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+<!-- Card 1 -->
+<div class="group relative flex flex-col rounded-xl border border-primary/20 bg-card-dark/40 backdrop-blur-sm overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(238,189,43,0.1)] hover:-translate-y-1">
+<!-- Image Container -->
+<div class="relative h-64 w-full overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10 opacity-60"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern luxury villa with pool at sunset in Bali" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuoZYGidHAOsZsvW_UKewzFdKhDJzuUFHF8ENNVY7aXOF0TFrQLi2eWWdB8vJb64NnmF7OKnTZPdN1TwCfD1bkuts98J2Z9njPr9AgETRCfbm7hSLQML9839oZ2ORSW2RhbCHyZbnfF5sRIhE5wms6fQ0j8rUsKsmUrJarjwrgHqWuGHiCBj4yjgxwVlj203p30DDXDFwQKkodbVZ74p_x9b5klOMCTlFwfU6-pR_iz1oUWaBGs3E72OKeRUTH14453gUOrHtdYGk');">
+</div>
+<div class="absolute top-4 right-4 z-20">
+<span class="inline-flex items-center rounded-full bg-background-dark/80 px-2.5 py-1 text-xs font-medium text-primary backdrop-blur-md border border-primary/20">
+<span class="material-symbols-outlined text-[14px] mr-1">lock</span>
+                            Private Listing
+                        </span>
+</div>
+</div>
+<!-- Content Container -->
+<div class="flex flex-col flex-1 p-6 gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">The Obsidian</h3>
+<p class="text-sm text-slate-400 flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                Canggu, Bali
+                            </p>
+</div>
+<div class="text-right">
+<p class="text-xs text-slate-500 uppercase tracking-wider">Starting From</p>
+<p class="text-lg font-bold text-primary">$450,000</p>
+</div>
+</div>
+<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Target ROI</span>
+<span class="text-sm font-semibold text-white">12 - 15%</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Configuration</span>
+<span class="text-sm font-semibold text-white">4 BR | 4 BA</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Size</span>
+<span class="text-sm font-semibold text-white">320 sqm</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Status</span>
+<span class="text-sm font-semibold text-green-400">Available</span>
+</div>
+</div>
+<div class="mt-auto pt-4">
+<button class="w-full group/btn relative overflow-hidden rounded-lg bg-primary/10 hover:bg-primary px-4 py-3 text-sm font-bold text-primary hover:text-background-dark transition-all duration-300 border border-primary/30">
+<div class="relative z-10 flex items-center justify-center gap-2">
+<span>View Private Details</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative flex flex-col rounded-xl border border-primary/20 bg-card-dark/40 backdrop-blur-sm overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(238,189,43,0.1)] hover:-translate-y-1">
+<!-- Image Container -->
+<div class="relative h-64 w-full overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10 opacity-60"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Luxury tropical villa exterior with palm trees" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9YDFu8M96sbRepIxZpObqmsqn-PeZvmgV8aYNjVAn4Qq0sRxADtV2qFpO4VWkpLFSIb-3560GwkCEr5PqFCvHxBohgCloj2kzhbP5FyaPWLBduOw_6tA_x-VOXFvKIg4ap_M1uqFtmoiBFJEeVDUxzVTh9bU28pmUqPswAEiYyfdQ30JGjEpaG8-T4jOlbWCr3Yz7oexHIx8dCa8cuTkj5-5GCnKZSYe4cjK1ZikZ1ZnPMdawEy68f48GWEbcwJIOrSA04X59i-w');">
+</div>
+<div class="absolute top-4 right-4 z-20">
+<span class="inline-flex items-center rounded-full bg-background-dark/80 px-2.5 py-1 text-xs font-medium text-primary backdrop-blur-md border border-primary/20">
+<span class="material-symbols-outlined text-[14px] mr-1">lock</span>
+                            Private Listing
+                        </span>
+</div>
+</div>
+<!-- Content Container -->
+<div class="flex flex-col flex-1 p-6 gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Villa Aurelia</h3>
+<p class="text-sm text-slate-400 flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                Uluwatu, Bali
+                            </p>
+</div>
+<div class="text-right">
+<p class="text-xs text-slate-500 uppercase tracking-wider">Starting From</p>
+<p class="text-lg font-bold text-primary">$680,000</p>
+</div>
+</div>
+<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Target ROI</span>
+<span class="text-sm font-semibold text-white">10 - 13%</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Configuration</span>
+<span class="text-sm font-semibold text-white">5 BR | 6 BA</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">View</span>
+<span class="text-sm font-semibold text-white">Ocean Front</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Status</span>
+<span class="text-sm font-semibold text-primary">Last Unit</span>
+</div>
+</div>
+<div class="mt-auto pt-4">
+<button class="w-full group/btn relative overflow-hidden rounded-lg bg-primary/10 hover:bg-primary px-4 py-3 text-sm font-bold text-primary hover:text-background-dark transition-all duration-300 border border-primary/30">
+<div class="relative z-10 flex items-center justify-center gap-2">
+<span>View Private Details</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative flex flex-col rounded-xl border border-primary/20 bg-card-dark/40 backdrop-blur-sm overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(238,189,43,0.1)] hover:-translate-y-1">
+<!-- Image Container -->
+<div class="relative h-64 w-full overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent z-10 opacity-60"></div>
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist modern architecture villa interior" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGI-Pnal1Bcth6VlxJWs6xwPPRHl-DlG8WRyjuCG4svCQWB8h7Bg_HqkgzcRR-ev6cQe_eKkquWhhIWcDF9rw1ri6Vkg9sMlcraFKVJv5w_C6Z6wu9oWoHqsk-cjjq9ws5kN4P_VH37yAKmal87PsZjtgrYJaUFrM9KflY42omAm2wv5VZRzp9ttf8SLliroNKeV45upxkd73uPupOyNDNkIwKk1ndswy5MtomNrjW0yl_8rsmHaCxaC45SUWpAMiKQNgFnR7_Af8');">
+</div>
+<div class="absolute top-4 right-4 z-20">
+<span class="inline-flex items-center rounded-full bg-background-dark/80 px-2.5 py-1 text-xs font-medium text-primary backdrop-blur-md border border-primary/20">
+<span class="material-symbols-outlined text-[14px] mr-1">lock</span>
+                            Private Listing
+                        </span>
+</div>
+</div>
+<!-- Content Container -->
+<div class="flex flex-col flex-1 p-6 gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">The Sanctum</h3>
+<p class="text-sm text-slate-400 flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                Ubud, Bali
+                            </p>
+</div>
+<div class="text-right">
+<p class="text-xs text-slate-500 uppercase tracking-wider">Starting From</p>
+<p class="text-lg font-bold text-primary">$520,000</p>
+</div>
+</div>
+<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Target ROI</span>
+<span class="text-sm font-semibold text-white">14 - 16%</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Configuration</span>
+<span class="text-sm font-semibold text-white">3 BR | 3.5 BA</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Size</span>
+<span class="text-sm font-semibold text-white">280 sqm</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs text-slate-500 uppercase">Status</span>
+<span class="text-sm font-semibold text-green-400">Presale</span>
+</div>
+</div>
+<div class="mt-auto pt-4">
+<button class="w-full group/btn relative overflow-hidden rounded-lg bg-primary/10 hover:bg-primary px-4 py-3 text-sm font-bold text-primary hover:text-background-dark transition-all duration-300 border border-primary/30">
+<div class="relative z-10 flex items-center justify-center gap-2">
+<span>View Private Details</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Call to Action (Subtle) -->
+<div class="mt-16 flex flex-col items-center gap-4 text-center">
+<p class="text-slate-500 text-sm">
+                Can't find what you're looking for? We have 12 other off-market listings available.
+            </p>
+<a class="text-primary hover:text-white transition-colors text-sm font-bold border-b border-primary pb-0.5 hover:border-white" href="#">
+                Request Full Portfolio Access
+            </a>
+</div>
+</main>
+<footer class="border-t border-background-dark/10 dark:border-primary/10 bg-background-light dark:bg-background-dark py-8 text-center text-xs text-slate-500">
+<p>© 2024 Luxe Estates Bali. All Rights Reserved.</p>
+</footer>
+</body></html>
