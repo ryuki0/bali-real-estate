@@ -1,216 +1,206 @@
 <!DOCTYPE html>
 
-<html lang="ja"><head>
+<html class="dark" lang="ja"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>WordPress 一括公開・インポートガイド</title>
-<!-- Tailwind CSS v3 with Plugins -->
-<script type="text/javascript" nonce="e1ca26852fa449999f1d2727f5b" src="//local.adguard.org?ts=1772151996435&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzQwY2NlMDRiODE0MDRhYTRiMGY3ZjUzNGQ2MzUyNjBmEgsSBxC_-4nR9gkYAZIBIwoKcHJvamVjdF9pZBIVQhM1ODU0NzY1Mzk5ODU4Nzc3ODI3%26filename%3D%26opi%3D89354086&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="e1ca26852fa449999f1d2727f5b" src="//local.adguard.org?ts=1772151996435&amp;name=AdGuard%20Extra&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Google Fonts: Noto Serif JP for that premium Japanese look -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              gold: '#D4AF37',
-              dark: '#0A0A0A',
-              charcoal: '#1A1A1A',
-              accent: '#C5A028'
-            }
-          },
-          fontFamily: {
-            serif: ['"Noto Serif JP"', 'serif'],
-          }
+<script type="text/javascript" nonce="e1ca26852fa449999f1d2727f5b" src="//local.adguard.org?ts=1772151996435&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2M4M2FlZmZkMmU2MDQ1NGNhNWI2YmMxMTgyYzgzZTI3EgsSBxC_-4nR9gkYAZIBIwoKcHJvamVjdF9pZBIVQhM1ODU0NzY1Mzk5ODU4Nzc3ODI3%26filename%3D%26opi%3D89354086&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="e1ca26852fa449999f1d2727f5b" src="//local.adguard.org?ts=1772151996435&amp;name=AdGuard%20Extra&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
         }
-      }
-    }
-  </script>
-<style data-purpose="typography">
-    body {
-      background-color: #0A0A0A;
-      color: #E5E5E5;
-      font-family: 'Noto Serif JP', serif;
-    }
-    .gold-gradient-text {
-      background: linear-gradient(to right, #D4AF37, #F9E498, #D4AF37);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .gold-border {
-      border-image: linear-gradient(to right, #D4AF37, #A67C00) 1;
-    }
-  </style>
-<style data-purpose="layout-components">
-    .card-dark {
-      background: linear-gradient(145deg, #1A1A1A, #0F0F0F);
-      border: 1px solid #333;
-    }
-    .step-number {
-      font-family: 'Georgia', serif;
-      font-style: italic;
-    }
-  </style>
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(16, 25, 34, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
 </head>
-<body class="antialiased">
-<!-- BEGIN: MainHeader -->
-<header class="py-12 px-6 border-b border-brand-gold/20 text-center">
-<div class="max-w-4xl mx-auto">
-<span class="text-brand-gold tracking-[0.3em] text-sm uppercase mb-4 block">Premium Real Estate Solutions</span>
-<h1 class="text-4xl md:text-5xl font-bold mb-6 gold-gradient-text leading-tight">
-        WordPress一括公開・インポートガイド
-      </h1>
-<p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-        洗練された投資用ランディングページを、瞬時に世界へ発信するためのエグゼクティブ・マニュアル。
-      </p>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 glass-effect border-b border-slate-200/10">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">domain</span>
+<h1 class="text-xl font-extrabold tracking-tighter text-slate-900 dark:text-white uppercase">BALI <span class="text-primary">LUXE</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Properties</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Investment</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all">
+                    Inquire Now
+                </button>
+<div class="h-10 w-10 rounded-full border-2 border-primary/30 overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8lLY1zH0hx9yYjA_GM8jyKHs1nd_27i4NMB6VMd_dOWYZqXkTquppOPkewAu55ppshXkGpFlrxVw5UpjdpC1RlOh5bXwwuOEft0cyfQzJP-YINb3lxRlGGRAKj8eWxj9Xfrl7LvxQNzzVZ3fcd2SjnLSYRz-Jf-1DGa7oe_2-q6Z-etegCmQ7JxMRZbRFJg2Hhawc4ZeqfAAc6Un4F1hX2pA22BEChzzvJs5FGzUNYEtDlKe07YRKm0pcpe5GQTZeUdPZXslce0c"/>
+</div>
+</div>
 </div>
 </header>
-<!-- END: MainHeader -->
-<!-- BEGIN: MainContent -->
-<main class="max-w-6xl mx-auto py-16 px-6 lg:px-8">
-<!-- BEGIN: OneClickImportStrategy -->
-<section class="mb-24" data-purpose="section-import-strategy">
-<div class="flex items-center gap-4 mb-10">
-<span class="text-5xl font-bold text-brand-gold/30 step-number">01</span>
-<h2 class="text-3xl font-bold text-white">ワンクリック・インポート戦略</h2>
+<main class="pt-0">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-background-dark/60 via-background-dark/40 to-background-dark/90 z-10"></div>
+<img alt="Luxury Villa" class="w-full h-full object-cover" data-alt="Luxury Bali infinity pool villa with ocean view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2W0VoJ309jDCLIxZN0Z0Aoaffhpa4tSr3T_dHFUsmSiOuHHHU_5UGISss-oM1JrfWSb0jOKD81oxqkmkYvbmOXzadm0p3yuINT1uhGu2uwp6CGyloWDeX30--8d9nCjbYR_bpug3naV0Ig1GtTInL4lrrUXn61C-Xn4GE_NpNIwXYl7DyMBpK6pdBxhspILHpm05OLLbFdkvjt3NGUZVPCJ6knPZ9XyN7Jg5d7MxXaZqR9BwuppkiJuWoXyetzrUeBubujoPML84"/>
 </div>
-<div class="grid md:grid-cols-2 gap-8 items-stretch">
-<div class="card-dark p-8 rounded-lg border-l-4 border-l-brand-gold">
-<h3 class="text-xl font-bold text-brand-gold mb-4">JSON / XML データの活用</h3>
-<p class="text-gray-400 leading-relaxed mb-6">
-            既に最適化されたページ構成をJSON形式でエクスポートし、Elementor等のページビルダーを使用して「一括」で取り込みます。手動でのブロック配置は一切不要です。
-          </p>
-<ul class="space-y-3 text-sm text-gray-300">
-<li class="flex items-center gap-2">
-<span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
-              Elementor テンプレートライブラリへの接続
-            </li>
-<li class="flex items-center gap-2">
-<span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
-              All-in-One WP Migration によるサイト全体の移行
-            </li>
-</ul>
+<!-- Content -->
+<div class="relative z-20 max-w-5xl mx-auto px-6 pt-20 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-8">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Exclusive Real Estate Opportunities</span>
 </div>
-<div class="flex items-center justify-center bg-brand-charcoal rounded-lg border border-white/5 relative overflow-hidden">
-<!-- Placeholder for visual representation of Import process -->
-<div class="text-center p-10">
-<div class="w-20 h-20 border-2 border-brand-gold border-dashed rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
-<svg class="h-10 w-10 text-brand-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
+<h2 class="text-4xl md:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
+                    バリ島で叶える、至高のライフスタイルと<span class="text-primary">安定した資産形成</span>
+</h2>
+<p class="text-lg md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                    スミニャック、ウブドの厳選されたプレミアム・ヴィラへの投資。<br class="hidden md:block"/>
+                    Invest in premium villas in the heart of Seminyak and Ubud.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto min-w-[200px] bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-xl shadow-primary/20 flex items-center justify-center gap-2">
+                        View Collection
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="w-full sm:w-auto min-w-[200px] glass-effect hover:bg-white/10 text-white border border-white/20 px-8 py-4 rounded-xl text-lg font-bold transition-all">
+                        Inquire Now
+                    </button>
 </div>
-<p class="text-xs tracking-widest text-brand-gold/60">FILE IMPORT SYSTEM</p>
+<!-- Stats/Highlights -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 max-w-4xl mx-auto">
+<div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+<div class="flex items-center gap-3 mb-2 justify-center md:justify-start">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+<p class="text-slate-400 text-sm font-medium">Annual Return</p>
+</div>
+<p class="text-3xl font-bold text-white">8-12%</p>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+<div class="flex items-center gap-3 mb-2 justify-center md:justify-start">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<p class="text-slate-400 text-sm font-medium">Prime Locations</p>
+</div>
+<p class="text-3xl font-bold text-white">Seminyak &amp; Ubud</p>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+<div class="flex items-center gap-3 mb-2 justify-center md:justify-start">
+<span class="material-symbols-outlined text-primary">home_work</span>
+<p class="text-slate-400 text-sm font-medium">Property Growth</p>
+</div>
+<p class="text-3xl font-bold text-white">15% +</p>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 text-white opacity-50 flex flex-col items-center gap-2">
+<span class="text-[10px] uppercase tracking-[0.2em]">Explore</span>
+<span class="material-symbols-outlined animate-bounce">keyboard_arrow_down</span>
+</div>
+</section>
+<!-- Featured Estates Preview -->
+<section class="py-24 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+<div>
+<h3 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Curated Selection</h3>
+<h4 class="text-3xl md:text-4xl font-extrabold dark:text-white">Featured Premium Estates</h4>
+</div>
+<a class="group flex items-center gap-2 font-bold text-primary" href="#">
+                        View All Properties
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">east</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Property Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative h-[400px] overflow-hidden rounded-2xl mb-4">
+<img alt="Seminyak Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Luxury beachfront villa in Seminyak" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEHK1Va2uC6HNthBVQHZc8R4jd9jeESbDZ0hcjihcyaRVSiaTs4RlPEVMF5kpEr3Xos-u0gDMTAV264UxjkbuIEjbiPlRLteLWJKDsFGp-3qx28igRzlHhyq1P2NBFlk3uWUmJC6hQfZfg_OGCH1ZD35oQABQWkOXZneFOx5bNjSpMlWCmQ1VeI62rhShTRQVwC3aqP238_qioei0cWnnL15WO162_LuA3YJz0lmqVp2ytmyP2LbPc-iEcWmXVVHQcrVhX5jrsLnE"/>
+<div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold text-white">
+                                SEMINYAK
+                            </div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<h5 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Seminyak Beachfront Oasis</h5>
+<div class="flex items-center gap-4 text-slate-500 dark:text-slate-400">
+<span class="flex items-center gap-1 text-sm"><span class="material-symbols-outlined text-sm">bed</span> 4 Beds</span>
+<span class="flex items-center gap-1 text-sm"><span class="material-symbols-outlined text-sm">pool</span> Private Pool</span>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="group cursor-pointer">
+<div class="relative h-[400px] overflow-hidden rounded-2xl mb-4">
+<img alt="Ubud Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Jungle retreat villa in Ubud" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYpUGk8RWjSC70opqZCABy-OKSRvNDnPZjjJiZO8tQKcz5liSTZndrWd_O8V-hNlaZT9a0yPKSG4ySVEA0soE60KDu0TWHmg2W23Vym8PFt9vUdvgtcbfSpeChmtWSl7ZY07vFvKUc4jFpKHBMRFu_TyJMcBdIqJItkSTIWUq_eWZYMhLbmo2aUNoO_yrU6Nb10rO2iB15gJlhtOmuhXktqxlGegocaguY1Ki2GQlR3LgEyoK8eRftQf-rjjHTaPYvuBi10uXhiRU"/>
+<div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold text-white">
+                                UBUD
+                            </div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<h5 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Ubud Jungle Retreat</h5>
+<div class="flex items-center gap-4 text-slate-500 dark:text-slate-400">
+<span class="flex items-center gap-1 text-sm"><span class="material-symbols-outlined text-sm">bed</span> 3 Beds</span>
+<span class="flex items-center gap-1 text-sm"><span class="material-symbols-outlined text-sm">spa</span> Wellness Area</span>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative h-[400px] overflow-hidden rounded-2xl mb-4">
+<img alt="Canggu Villa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern villa in Canggu with minimalist design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3b1YXb6erkEnLEZLh3ueQUs9Yjyh9mr572nzpisx0ZWwt1021bH313kc9HGfcjhx0tSL2rsdwHqNq5byLjJR0JfP_ELQWnd1KG2CB-q_5o3M_HBTEPP2H0RrcB-62fjVvhmF61spNaNquYszf7ymhBnJzo0wlW3vFcnVdQx_yT80nJb_9a-NUNpCuAv1_jLN4rMnwpLPNj91PVbIOWDN16eIEVe5W4uSkfkOOwFj69lZYZIlKRmXx8sb4ktuaGPzaKitl1MYZU1U"/>
+<div class="absolute top-4 left-4 bg-background-dark/80 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold text-white">
+                                CANGGU
+                            </div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<h5 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Canggu Modern Haven</h5>
+<div class="flex items-center gap-4 text-slate-500 dark:text-slate-400">
+<span class="flex items-center gap-1 text-sm"><span class="material-symbols-outlined text-sm">bed</span> 5 Beds</span>
+<span class="flex items-center gap-1 text-sm"><span class="material-symbols-outlined text-sm">deck</span> Rooftop Terrace</span>
+</div>
 </div>
 </div>
 </div>
 </section>
-<!-- END: OneClickImportStrategy -->
-<!-- BEGIN: TemplatePreparation -->
-<section class="mb-24" data-purpose="section-template-prep">
-<div class="flex items-center gap-4 mb-10">
-<span class="text-5xl font-bold text-brand-gold/30 step-number">02</span>
-<h2 class="text-3xl font-bold text-white">テンプレート・プレパレーション</h2>
-</div>
-<div class="card-dark p-10 rounded-xl relative overflow-hidden">
-<div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-3xl rounded-full"></div>
-<div class="grid md:grid-cols-3 gap-10">
-<div>
-<h4 class="text-brand-gold font-bold mb-2">構成の統一</h4>
-<p class="text-sm text-gray-400">バリ不動産ブランドのトーン＆マナーに合わせ、黄金比に基づいた余白設定済みのテンプレートを使用します。</p>
-</div>
-<div>
-<h4 class="text-brand-gold font-bold mb-2">アセットの最適化</h4>
-<p class="text-sm text-gray-400">高解像度画像はあらかじめWebP形式に圧縮され、読み込み速度と美しさを両立させた状態でパッケージ化されています。</p>
-</div>
-<div>
-<h4 class="text-brand-gold font-bold mb-2">レスポンシブ同期</h4>
-<p class="text-sm text-gray-400">PC、タブレット、スマートフォン全ての表示が最適化された状態でインポートされるため、個別の調整時間を削減します。</p>
-</div>
-</div>
-</div>
-</section>
-<!-- END: TemplatePreparation -->
-<!-- BEGIN: DomainSSL -->
-<section class="mb-24" data-purpose="section-domain-setup">
-<div class="flex items-center gap-4 mb-10">
-<span class="text-5xl font-bold text-brand-gold/30 step-number">03</span>
-<h2 class="text-3xl font-bold text-white">ドメイン ＆ SSL セットアップ</h2>
-</div>
-<div class="bg-brand-charcoal border border-brand-gold/10 p-8 rounded-lg">
-<div class="flex flex-wrap gap-6 justify-between items-center">
-<div class="space-y-4 max-w-md">
-<div class="flex items-start gap-4">
-<div class="mt-1 w-5 h-5 bg-brand-gold/20 rounded flex items-center justify-center flex-shrink-0">
-<svg class="w-3 h-3 text-brand-gold" fill="currentColor" viewbox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
-</div>
-<div>
-<p class="font-bold text-white">独自ドメインの紐付け</p>
-<p class="text-sm text-gray-400">投資家の信頼を勝ち取るための専用ドメイン設定。</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="mt-1 w-5 h-5 bg-brand-gold/20 rounded flex items-center justify-center flex-shrink-0">
-<svg class="w-3 h-3 text-brand-gold" fill="currentColor" viewbox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
-</div>
-<div>
-<p class="font-bold text-white">常時SSL化 (HTTPS)</p>
-<p class="text-sm text-gray-400">セキュアな通信環境により、コンバージョン率とSEO評価を向上させます。</p>
-</div>
-</div>
-</div>
-<div class="w-full md:w-auto">
-<div class="p-6 bg-black/40 border border-brand-gold/30 rounded-md text-center">
-<span class="text-xs text-brand-gold block mb-2 uppercase tracking-widest">Server Status</span>
-<div class="flex items-center justify-center gap-2">
-<span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-<span class="text-white font-mono">ENCRYPTED &amp; ACTIVE</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- END: DomainSSL -->
-<!-- BEGIN: FinalChecklist -->
-<section class="mb-16" data-purpose="section-launch-checklist">
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold gold-gradient-text mb-4">最終ローンチチェックリスト</h2>
-<div class="w-24 h-1 bg-brand-gold mx-auto"></div>
-</div>
-<div class="max-w-2xl mx-auto space-y-4">
-<label class="flex items-center p-5 card-dark rounded-lg cursor-pointer hover:border-brand-gold/50 transition-colors group">
-<input class="w-6 h-6 rounded border-brand-gold bg-transparent text-brand-gold focus:ring-offset-brand-dark focus:ring-brand-gold" type="checkbox"/>
-<span class="ml-4 text-gray-200 group-hover:text-white">全ての外部リンクの動作確認完了</span>
-</label>
-<label class="flex items-center p-5 card-dark rounded-lg cursor-pointer hover:border-brand-gold/50 transition-colors group">
-<input class="w-6 h-6 rounded border-brand-gold bg-transparent text-brand-gold focus:ring-offset-brand-dark focus:ring-brand-gold" type="checkbox"/>
-<span class="ml-4 text-gray-200 group-hover:text-white">お問い合わせフォームのテスト送信完了</span>
-</label>
-<label class="flex items-center p-5 card-dark rounded-lg cursor-pointer hover:border-brand-gold/50 transition-colors group">
-<input class="w-6 h-6 rounded border-brand-gold bg-transparent text-brand-gold focus:ring-offset-brand-dark focus:ring-brand-gold" type="checkbox"/>
-<span class="ml-4 text-gray-200 group-hover:text-white">トラッキングコード (GA4/Pixel) の設置</span>
-</label>
-<label class="flex items-center p-5 card-dark rounded-lg cursor-pointer hover:border-brand-gold/50 transition-colors group">
-<input class="w-6 h-6 rounded border-brand-gold bg-transparent text-brand-gold focus:ring-offset-brand-dark focus:ring-brand-gold" type="checkbox"/>
-<span class="ml-4 text-gray-200 group-hover:text-white">モバイル表示でのレイアウト崩れチェック</span>
-</label>
-</div>
-<div class="mt-16 text-center">
-<button class="px-12 py-5 bg-brand-gold text-black font-bold text-lg rounded-full hover:bg-brand-accent transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
-          公開を確定する (Publish Now)
-        </button>
-<p class="mt-4 text-sm text-gray-500 italic">※一括インポートにより、既存のページは上書きされる場合があります。</p>
-</div>
-</section>
-<!-- END: FinalChecklist -->
 </main>
-<!-- END: MainContent -->
-<!-- BEGIN: Footer -->
-<footer class="py-10 border-t border-white/10 text-center">
-<p class="text-xs text-gray-500 tracking-widest uppercase">
-      © 2024 Luxury Bali Real Estate. All Rights Reserved.
-    </p>
+<footer class="bg-slate-50 dark:bg-background-dark border-t border-slate-200 dark:border-white/5 py-12">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">domain</span>
+<span class="text-lg font-extrabold tracking-tighter uppercase dark:text-white">BALI <span class="text-primary">LUXE</span></span>
+</div>
+<p class="text-slate-500 text-sm">© 2024 Bali Luxe Real Estate. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">call</span></a>
+</div>
+</div>
 </footer>
-<!-- END: Footer -->
 </body></html>
