@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script type="text/javascript" nonce="e1ca26852fa449999f1d2727f5b" src="//local.adguard.org?ts=1772159184961&amp;type=content-script&amp;dmn=contribution.usercontent.google.com&amp;url=https%3A%2F%2Fcontribution.usercontent.google.com%2Fdownload%3Fc%3DCgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sX2RhN2UxYjViOTEwNzQyM2ZiYWEzY2U3NDc1ZDMyNjM3EgsSBxC_-4nR9gkYAZIBIwoKcHJvamVjdF9pZBIVQhM1ODU0NzY1Mzk5ODU4Nzc3ODI3%26filename%3D%26opi%3D89354086&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="e1ca26852fa449999f1d2727f5b" src="//local.adguard.org?ts=1772159184961&amp;name=AdGuard%20Extra&amp;type=user-script"></script><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1173d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', 'Noto Sans JP', sans-serif;
+        }
+        .bg-mesh {
+            background-color: #101922;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(17, 115, 212, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(17, 115, 212, 0.1) 0px, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header / Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-20 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary text-2xl">apartment</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">バリ島不動産投資</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">ホーム</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">物件情報</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">メリット</a>
+<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">サポート</a>
+</nav>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-wide transition-all hover:brightness-110 active:scale-95 shadow-lg shadow-primary/20">
+<span class="truncate">お問い合わせ</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<div class="relative w-full px-4 md:px-10 py-10">
+<div class="mx-auto max-w-[1200px]">
+<div class="flex min-h-[520px] flex-col gap-8 rounded-2xl items-center justify-center p-8 text-center relative overflow-hidden shadow-2xl" data-alt="Luxury tropical villa with swimming pool at sunset in Bali" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0%, rgba(16, 25, 34, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNKJ3QxiEfLTTQepd06mV6KptjFzwjnRrStwSCMqOsvtMW1Wh4zwiNyXgZcjy_YtY4JxoI-AdbE010mhtGs_MbHtgQytkMGDKfyQn1PC3xWgh0uPfuCfBHN95nZ54E9emN7z7YJI74ANmwu-44zQCk0FEzdFpSCkMwK2DnsEDZg1s7tUzjeg_rYbFCZH8XVlPrqOw7Ixo85BZ3MV6jEKAyPJ-BCtAYrZWvJuoTjYbeG0lhexfcbc-RcfqOyqMaQY6n-AhmhGlHKa4");'>
+<div class="z-10 max-w-3xl flex flex-col gap-6">
+<span class="inline-block self-center px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-bold uppercase tracking-widest">Premium Investment Opportunity</span>
+<h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight">
+                                バリ島不動産投資 <br/><span class="text-primary">4つのメリット</span>
+</h1>
+<p class="text-slate-300 text-lg md:text-xl font-normal leading-relaxed max-w-2xl mx-auto">
+                                安定した経済成長を続けるアジア屈指のリゾート地。<br class="hidden md:block"/>世界中の富裕層が注目する、高収益の資産運用を実現します。
+                            </p>
+<div class="pt-4">
+<button class="flex min-w-[240px] mx-auto cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-primary text-white text-lg font-bold leading-normal tracking-wide transition-all hover:scale-105 shadow-xl shadow-primary/30">
+<span class="material-symbols-outlined mr-2">download</span>
+<span class="truncate">投資ガイドをダウンロード</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Benefits Section -->
+<section class="bg-mesh py-20 px-4 md:px-20 @container">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div class="flex flex-col gap-4">
+<h2 class="text-slate-900 dark:text-white text-3xl md:text-5xl font-black leading-tight">
+                                なぜ、今バリ島なのか？
+                            </h2>
+<div class="w-20 h-1.5 bg-primary rounded-full"></div>
+<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mt-2 leading-relaxed">
+                                世界情勢が揺れ動く中、バリ島は観光需要の回復とインフラ開発により、東南アジアで最も堅実な不動産市場の一つとして再評価されています。
+                            </p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Benefit 1 -->
+<div class="group flex flex-col gap-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 p-8 transition-all hover:bg-white dark:hover:bg-slate-900 hover:shadow-2xl hover:border-primary/50 relative overflow-hidden backdrop-blur-sm">
+<div class="absolute -right-4 -top-4 text-primary/5 group-hover:text-primary/10 transition-colors">
+<span class="material-symbols-outlined text-9xl">trending_up</span>
+</div>
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">trending_up</span>
+</div>
+<div class="flex flex-col gap-3 relative z-10">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">高い利回り (8-12%)</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                    ホテル運営やヴィラレンタルにより、年間期待利回り8-12%という、国内不動産では不可能な高収益を実現します。
+                                </p>
+</div>
+</div>
+<!-- Benefit 2 -->
+<div class="group flex flex-col gap-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 p-8 transition-all hover:bg-white dark:hover:bg-slate-900 hover:shadow-2xl hover:border-primary/50 relative overflow-hidden backdrop-blur-sm">
+<div class="absolute -right-4 -top-4 text-primary/5 group-hover:text-primary/10 transition-colors">
+<span class="material-symbols-outlined text-9xl">public</span>
+</div>
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">public</span>
+</div>
+<div class="flex flex-col gap-3 relative z-10">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">観光業の活況</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                    デジタルノマドの増加や観光客の回復により、年間を通じて安定した客室稼働率が期待できる数少ない市場です。
+                                </p>
+</div>
+</div>
+<!-- Benefit 3 -->
+<div class="group flex flex-col gap-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 p-8 transition-all hover:bg-white dark:hover:bg-slate-900 hover:shadow-2xl hover:border-primary/50 relative overflow-hidden backdrop-blur-sm">
+<div class="absolute -right-4 -top-4 text-primary/5 group-hover:text-primary/10 transition-colors">
+<span class="material-symbols-outlined text-9xl">insights</span>
+</div>
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">insights</span>
+</div>
+<div class="flex flex-col gap-3 relative z-10">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">資産価値の上昇</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                    インフラ整備と限定された土地供給により、地価は年々上昇。売却時のキャピタルゲインも大きな魅力です。
+                                </p>
+</div>
+</div>
+<!-- Benefit 4 -->
+<div class="group flex flex-col gap-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 p-8 transition-all hover:bg-white dark:hover:bg-slate-900 hover:shadow-2xl hover:border-primary/50 relative overflow-hidden backdrop-blur-sm">
+<div class="absolute -right-4 -top-4 text-primary/5 group-hover:text-primary/10 transition-colors">
+<span class="material-symbols-outlined text-9xl">gavel</span>
+</div>
+<div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">gavel</span>
+</div>
+<div class="flex flex-col gap-3 relative z-10">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">専門的な法務サポート</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                                    インドネシア特有の権利形態（HGB等）や登記手続きも、現地に精通した日本人スタッフがフルサポート。
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-4 md:px-20 @container">
+<div class="max-w-[1000px] mx-auto rounded-3xl bg-primary p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+<div class="flex flex-col gap-4 text-center md:text-left z-10">
+<h2 class="text-white text-3xl md:text-4xl font-black leading-tight">
+                            詳細な市場レポートを<br/>今すぐ確認
+                        </h2>
+<p class="text-white/80 text-lg">最新の市場動向と投資シミュレーションを網羅したガイドブック</p>
+</div>
+<div class="z-10 w-full md:w-auto">
+<button class="w-full md:min-w-[280px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-white text-primary text-lg font-bold leading-normal tracking-wide transition-all hover:bg-slate-100 shadow-xl flex gap-3">
+<span class="material-symbols-outlined">download</span>
+<span class="truncate">無料ダウンロード</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="flex flex-col gap-10 px-6 md:px-20 py-16 text-center border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 max-w-[1200px] mx-auto w-full">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-2xl">apartment</span>
+<span class="font-bold text-slate-900 dark:text-white">Bali Investment Real Estate</span>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm font-medium transition-colors" href="#">プライバシーポリシー</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm font-medium transition-colors" href="#">利用規約</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-primary text-sm font-medium transition-colors" href="#">会社概要</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex justify-center gap-6">
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+<p class="text-slate-500 dark:text-slate-500 text-sm font-normal">© 2024 Bali Investment Real Estate. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
